@@ -4,6 +4,8 @@
 
 **Status:** v0.1.0, working. Measured on a 10 million line, 1.2 GB access log.
 
+![logscan summary of a 2 million line access log: status classes, latency percentiles, slowest routes, routes with the most 5xx and timestamp anomalies](docs/images/summary.png)
+
 ## Features
 
 - Streaming and parallel: a reader cuts the input into blocks of whole lines, worker threads parse them, and partial results merge in file order. Reads files or standard input.
