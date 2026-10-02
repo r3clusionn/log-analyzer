@@ -339,7 +339,7 @@ pub fn render_text(s: &Summary, gap_threshold_s: f64) -> String {
     if !s.error_routes.is_empty() {
         let _ = writeln!(o, "routes with the most 5xx:");
         for r in &s.error_routes {
-            let _ = writeln!(o, "  {:>9} errors of {:>9}  {}", thousands(r.errors), thousands(r.requests), r.route);
+            let _ = writeln!(o, "  {:>9} {:>6} of {:>9}  {}", thousands(r.errors), if r.errors == 1 { " error" } else { "errors" }, thousands(r.requests), r.route);
         }
     }
     if !s.top_errors.is_empty() {
